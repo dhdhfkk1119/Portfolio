@@ -228,33 +228,49 @@ export default function Projects() {
           <h3 className="intro-h3">프로젝트</h3>
         </div>
         <div className="intor-s2 projects-wrap">
-          {projects.map((project) => (
-            <div
-              className={`projects-wrap-ul${project.hidden && !showAll ? ' hidden' : ''}`}
-              key={project.title}
-            >
-              <h4 className="projects-wrap-ul-h4">{project.title}</h4>
-              <div className="projects-wrap-ul-h4-div">{project.period}</div>
-              <div className="projects-wrap-ul-div">
-                <h5 className="projects-wrap-ul-h5">{project.heading}</h5>
-                <ul>
-                  {project.bullets.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
-              {project.links.map((link) => (
-                <div className="projects-wrap-link" key={link.href}>
-                  <span>{link.label}</span> <a href={link.href}>{link.text}</a>
+          {projects.map((project) => {
+            const primaryHref = project.links[0]?.href
+            const openPrimary = () => {
+              if (primaryHref) window.open(primaryHref, '_blank', 'noopener,noreferrer')
+            }
+            return (
+              <div
+                className={`projects-wrap-ul${project.hidden && !showAll ? ' hidden' : ''}`}
+                key={project.title}
+                role="link"
+                tabIndex={0}
+                onClick={openPrimary}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    openPrimary()
+                  }
+                }}
+              >
+                <h4 className="projects-wrap-ul-h4">{project.title}</h4>
+                <div className="projects-wrap-ul-h4-div">{project.period}</div>
+                <div className="projects-wrap-ul-div">
+                  <h5 className="projects-wrap-ul-h5">{project.heading}</h5>
+                  <ul>
+                    {project.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-              <div className="projects-wrap-skills">
-                {project.skills.map((src, i) => (
-                  <img key={i} src={src} alt="" />
+                {project.links.map((link) => (
+                  <div className="projects-wrap-link" key={link.href}>
+                    <span>{link.label}</span>{' '}
+                    <a href={link.href} onClick={(e) => e.stopPropagation()}>{link.text}</a>
+                  </div>
                 ))}
+                <div className="projects-wrap-skills">
+                  {project.skills.map((src, i) => (
+                    <img key={i} src={src} alt="" />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
         {!showAll && (
           <div className="projects-wrap-more">

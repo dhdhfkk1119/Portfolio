@@ -1,24 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
+import logo from "../assets/logo/logo.png";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 50);
     }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
-    <header className={scrolled ? 'scroll' : ''}>
+    <header className={scrolled ? "scroll" : ""}>
       <div className="header">
-        <button className="logo" onClick={scrollToTop}>JJW Portfolio</button>
+        <button className="logo" onClick={scrollToTop}>
+          <img src={logo} alt="" className="logo-img" />
+          JJW Portfolio
+        </button>
         <nav className="menu">
           <a href="#intro">소개</a>
           <a href="#languages">언어</a>
@@ -27,5 +31,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

@@ -2,7 +2,8 @@ import bitechLogo from '../assets/career/betech.png'
 
 const careers = [
   {
-    company: '비테크 (2025.12.08~)',
+    company: '비테크',
+    period: '2025.12.08 ~ 재직중',
     href: 'https://home.bestever.tech/',
     logo: bitechLogo,
   },
@@ -25,8 +26,8 @@ export default function Career() {
                 <div>
                   <img src={career.logo} alt="" width="80px" className="footer-wrap-img" />
                 </div>
-                <div className="footer-wrap-a">{career.href}</div>
-                <div className="footer-wrap-p"><span>{career.company}</span></div>
+                <div className="footer-wrap-a">{career.company}</div>
+                <div className="footer-wrap-p"><span>{career.period}</span></div>
               </a>
             ))}
           </div>

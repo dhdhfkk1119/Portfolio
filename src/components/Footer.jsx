@@ -12,8 +12,7 @@ export default function Footer() {
                 className="footer-wrap-img"
               />
             </div>
-            <div className="footer-wrap-a">https://github.com/dhdhfkk1119</div>
-            <div className="footer-wrap-p"><span>프로젝트 사이트</span></div>
+            <div className="footer-wrap-a">[깃허브] 프로젝트 사이트</div>
           </a>
           <a href="https://velog.io/@dhdhfkk1119/posts">
             <div>
@@ -24,8 +23,7 @@ export default function Footer() {
                 className="footer-wrap-img velog"
               />
             </div>
-            <div className="footer-wrap-a">https://velog.io/@dhdhfkk1119/posts</div>
-            <div className="footer-wrap-p"><span>개발 및 공부 블로그</span></div>
+            <div className="footer-wrap-a">[Vlog] 개발 및 공부 블로그</div>
           </a>
         </div>
         <div className="footer-copyright">
