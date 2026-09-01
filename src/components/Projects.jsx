@@ -1,9 +1,120 @@
 import { useState } from 'react'
+import analysisIcon from '../assets/icon/analysis.png'
+import markitCover from '../assets/project/markit_place/list-1.png'
+import takeBreathCover from '../assets/project/take_breath/list-1.png'
+import sellierList1 from '../assets/project/sellier/list-1.png'
+import sellierList2 from '../assets/project/sellier/list-2.png'
+import sellierList3 from '../assets/project/sellier/list-3.png'
+import sellierList4 from '../assets/project/sellier/list-4.png'
+import sellierList5 from '../assets/project/sellier/list-5.png'
+import ProjectDetailPopup from './ProjectDetailPopup.jsx'
 
 const badge = (label, color, logo, logoColor = 'white') =>
   `https://img.shields.io/badge/${label}-${color}?style=for-the-badge&logo=${logo}&logoColor=${logoColor}`
 
 const projects = [
+  {
+    title: '셀리에(Sellier)',
+    period: '',
+    heading: '중고 명품의 매입·감정·판매 전 과정을 통합 운영하는 프리미엄 리세일 플랫폼',
+    bullets: [
+      '실시간 시세 그래프와 실거래가 기반 가격 정보 제공',
+      '위탁판매 / 즉시판매 선택 및 역제안(경매식 입찰) 시스템',
+      '셀리에 랩 정품 감정 리포트 및 상세 컨디션 진단',
+      '상품·모델·브랜드별 관심상품(찜)과 피드 팔로우 기능',
+      '구매 리뷰 작성 및 마일리지 적립',
+      '프리미엄 발렉스 배송, 안전 배송, 부티크 픽업 지원',
+    ],
+    links: [],
+    skills: [],
+    hidden: false,
+    detail: {
+      slides: [
+        { type: 'image', src: sellierList1 },
+        { type: 'image', src: sellierList2 },
+        { type: 'image', src: sellierList3 },
+        { type: 'image', src: sellierList4 },
+        { type: 'image', src: sellierList5 },
+      ],
+    },
+  },
+  {
+    title: 'takeBreath(한숨)',
+    period: '2025.10.22 ~ 2025.11.11 (5인 팀 프로젝트 · 팀장)',
+    heading: '익명 커뮤니티와 전문 상담 연계로 직장 내 괴롭힘 회복을 돕는 멘탈 케어 플랫폼',
+    bullets: [
+      '익명 기반 커뮤니티와 전문 상담사 매칭으로 심리적 회복 지원',
+      'WebSocket·STOMP 기반 1:1 실시간 상담 채팅',
+      '기록실 작성(이미지·녹음 첨부) 및 PDF 다운로드 기능',
+      '포트원 연동 결제·환불, 포인트 히스토리 관리',
+      '커뮤니티 게시물 신고 시 단계별 정지 처리',
+      '어드민 페이지에서 상담사 승인·신고 검수·통계 대시보드 관리',
+    ],
+    links: [],
+    skills: [
+      badge('SpringBoot', '6DB33F', 'springboot'),
+      badge('Flutter', '02569B', 'flutter'),
+      badge('Dart', '0175C2', 'dart'),
+      badge('Java', '007396', 'java'),
+      badge('MySQL', '4479A1', 'mysql'),
+    ],
+    hidden: false,
+    detail: {
+      slides: [
+        { type: 'image', src: takeBreathCover },
+        {
+          type: 'info',
+          heading: '선정 배경',
+          bullets: [
+            '직장 내 대인관계, 업무 스트레스, 부당 대우 등으로 심리적 어려움을 겪어도 생계 때문에 직장을 떠나지 못하고 혼자 감내하는 경우가 많음',
+            '가족·지인에게도 털어놓기 어려워 상담을 미루다 우울감·번아웃·업무 능력 저하로 이어지는 문제 인식',
+            '익명 공간에서 경험을 나누고, 동시에 전문 상담사와 대화할 수 있는 신뢰 기반 멘탈 케어 앱으로 takeBreath를 기획',
+          ],
+        },
+        {
+          type: 'info',
+          heading: '프로젝트 개요',
+          rows: [
+            ['프로젝트', '한숨(Take_Breath)'],
+            ['설명', '익명 커뮤니티 + 전문 상담 연계로 직장 내 괴롭힘 회복과 안전한 경험 공유를 지원하는 신뢰 기반 앱'],
+            ['개발기간', '2025.10.22 ~ 2025.11.11'],
+            ['개발인원', '5인 팀 프로젝트 (백엔드 2 · 프론트 1 · 풀스택 2) — 팀장'],
+          ],
+        },
+        {
+          type: 'info',
+          heading: '개발 환경',
+          bullets: [
+            '백엔드 — Java 21, SpringBoot, JPA(ORM), MySQL 8.0',
+            '프론트엔드 — Dart, Flutter 3.27.4 SDK, RiverPod(2.3.6) 상태관리, freezed 모델',
+            '빌드/의존성 — Gradle(Groovy), pubspec.yaml',
+            '협업 도구 — Git, Jira',
+          ],
+        },
+        {
+          type: 'info',
+          heading: '주요 기능',
+          bullets: [
+            '회원가입 — 아이디/이메일 가입, 이메일 인증(Google SMTP), 약관 동의',
+            '로그인 — 일반/이메일 로그인 + 소셜 로그인(Google Firebase·네이버)',
+            '실시간 채팅 — WebSocket·STOMP 기반 1:1 채팅',
+            '기록실 — 이미지·녹음 첨부 작성, 수정/삭제, PDF 다운로드',
+            '커뮤니티 게시물 — 등록/수정/삭제, 신고 시 단계별 정지',
+            '결제(포트원) — 포인트 충전/환불, 포인트 히스토리 관리',
+            '웹 어드민 — 신고 검수, 상담사 승인, 시청각 자료(YouTube API), 통계 대시보드',
+          ],
+        },
+        {
+          type: 'info',
+          heading: '실행 방법',
+          bullets: [
+            'server 레포 클론 후 IDE(IntelliJ, VSCode, Eclipse 등)에서 실행',
+            '서버 구동 상태에서 Flutter 앱 실행',
+          ],
+        },
+      ],
+    },
+  },
   {
     title: 'Markit_Place - [RestFul]',
     period: '2025.08/25 ~ 2025.09/26 (7인 팀 프로젝트)',
@@ -27,6 +138,58 @@ const projects = [
       badge('Java', '007396', 'java'),
     ],
     hidden: false,
+    detail: {
+      slides: [
+        { type: 'image', src: markitCover },
+        {
+          type: 'info',
+          heading: '선정 배경',
+          quote: '"불필요한 물건에 새로운 가치를 부여하고, 이웃 간의 신뢰를 기반으로 한 소통 중심 거래 플랫폼을 만들자."',
+          bullets: [
+            '중고거래 플랫폼이 늘어나며 실시간 위치 기반 소통과 신뢰 있는 커뮤니티의 중요성이 커지는 추세',
+            '기존 서비스의 한계 — 거래 안정성 부족, 신고·제재 시스템 미흡, 커뮤니티 기능 부재',
+            'AI + GPS + 커뮤니티를 결합해 더 안전하고 신뢰성 있는 중고 거래 생태계를 목표로 개발',
+            "'MarkIt' — GPS 기반 위치 표시·보상의 기술적 정체성",
+            "'Place' — 단순 거래를 넘어 사람이 모이는 커뮤니티 공간, 위치 기반 소셜 커머스 생태계 지향",
+          ],
+        },
+        {
+          type: 'info',
+          heading: '프로젝트 개요',
+          rows: [
+            ['프로젝트', 'Markit_Place'],
+            ['설명', 'AI 기술을 활용한 실시간 GPS 중고 거래 커뮤니티 플랫폼'],
+            ['개발기간', '2025.08.25 ~ 2025.09.26 (7인 팀 프로젝트)'],
+            ['Front 환경', 'Dart · Flutter 3.27.4 · Gradle(Groovy) · pubspec.yaml'],
+          ],
+        },
+        {
+          type: 'info',
+          heading: '주요 기능',
+          bullets: [
+            '회원가입 — 아이디/이메일 가입, 이메일 인증, 약관 동의',
+            '로그인 — 일반/이메일 로그인 + 소셜 로그인(네이버·구글)',
+            '실시간 채팅 — WebSocket·STOMP 기반 1:1 채팅',
+            '상품 등록 — 등록/수정/삭제, 신고 시 정지 처리',
+            '커뮤니티 게시물 — 등록/수정/삭제, 신고 시 작성 제한',
+            '거래·유저 관리 — 구매 후기, 매너 평점, 칭찬하기',
+            '웹 어드민 — 공지사항·QnA·신고 내역 관리',
+          ],
+        },
+        {
+          type: 'info',
+          heading: '실행 방법',
+          bullets: [
+            'server 레포 클론 후 IDE(IntelliJ, VSCode, Eclipse 등)에서 실행',
+            '서버 구동 상태에서 Flutter 앱 실행',
+          ],
+          cta: {
+            label: '더 자세한 내용 보러가기',
+            href: 'https://github.com/dhdhfkk1119/markit_place_front',
+          },
+        },
+      ],
+    },
   },
   {
     title: 'SpringBoot_Cloud Rest - [CSR형식]',
@@ -217,20 +380,43 @@ const projects = [
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(null)
+  const [slideIndex, setSlideIndex] = useState(0)
+
+  const activeProject = activeIndex === null ? null : projects[activeIndex]
+
+  function closeDetail() {
+    setActiveIndex(null)
+  }
+  function prevSlide() {
+    if (!activeProject) return
+    const total = activeProject.detail.slides.length
+    setSlideIndex((i) => (i - 1 + total) % total)
+  }
+  function nextSlide() {
+    if (!activeProject) return
+    const total = activeProject.detail.slides.length
+    setSlideIndex((i) => (i + 1) % total)
+  }
 
   return (
     <section id="projects">
       <div className="section-wrap">
         <div className="intro-s1">
           <p className="h3-img">
-            <img src="https://github.com/user-attachments/assets/91d2f93e-5fcc-40cd-9c95-3da21ead1a72" alt="" width="45px" />
+            <img src={analysisIcon} alt="" width="45px" />
           </p>
           <h3 className="intro-h3">프로젝트</h3>
         </div>
         <div className="intor-s2 projects-wrap">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const primaryHref = project.links[0]?.href
             const openPrimary = () => {
+              if (project.detail) {
+                setActiveIndex(index)
+                setSlideIndex(0)
+                return
+              }
               if (primaryHref) window.open(primaryHref, '_blank', 'noopener,noreferrer')
             }
             return (
@@ -278,6 +464,13 @@ export default function Projects() {
           </div>
         )}
       </div>
+      <ProjectDetailPopup
+        project={activeProject}
+        slideIndex={slideIndex}
+        onClose={closeDetail}
+        onPrev={prevSlide}
+        onNext={nextSlide}
+      />
     </section>
   )
 }

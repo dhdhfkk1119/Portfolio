@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import profile from '../assets/profile.jpg'
+import profile from '../assets/profile/profile.jpg'
 
 const infoItems = [
   { label: '이름', value: '조정우' },
@@ -51,6 +51,12 @@ export default function IntroPopup({ open, onClose }) {
             </ul>
           </div>
         </div>
+        <h4 className="intro-popup-summary-title">간단한 자기소개</h4>
+        <p className="intro-popup-summary">
+          고교 웹디자인 기능부에서 개발을 시작해 3년간 프론트엔드·백엔드 실무를 경험하며 지방 기능경기대회 장려상을 수상했습니다.
+          이후 대학에서 알고리즘·데이터베이스 등을 체계적으로 학습하고 그린컴퓨터아카데미를 통해 코딩에 대한 이해를 한층 심화시켰습니다.
+          현재는 비테크에서 풀스택 개발자로 근무하며, 프론트엔드와 백엔드를 아우르며 사용자에게 실질적인 가치를 전하는 개발자로 성장해 나가고 있습니다.
+        </p>
         <label className="intro-popup-checkbox">
           <input
             type="checkbox"

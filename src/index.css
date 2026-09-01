@@ -9,6 +9,7 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
+    color: #8C1D40;
 }
 section {
     scroll-margin-top: 72px; /* 헤더 높이만큼 여백 추가 */
@@ -45,7 +46,7 @@ header.scroll .menu a {
 
 header.scroll .logo:hover,
 header.scroll .menu a:hover {
-    color: #FAC917; /* 스크롤 시 글자 색 검은색 */
+    color: #8C1D40; /* 스크롤 시 글자 색 검은색 */
 }
 
 label {
@@ -121,7 +122,7 @@ label {
 .masthead_hr {
     width: 3.25rem;
     margin: 1.5rem 0;
-    border-top: .2rem solid #FAC917;
+    border-top: .2rem solid #8C1D40;
     opacity: 1;
 }
 
@@ -203,7 +204,10 @@ label {
 
 /* 언어 부분 language CSS */
 #languages {
-    background-color:#f9c51d;
+    background-color:#8C1D40;
+}
+.languages-h3 {
+    color:white;
 }
 .languages {
     display: flex;
@@ -213,7 +217,7 @@ label {
     background-color: hsla(0, 0%, 100%, .8);
     box-shadow: 1rem 1rem 1rem 0 rgba(68, 68, 68, .2);
     border-radius: 1rem;
-    border:1px solid #ED8106;
+    border:1px solid #5C1029;
 }
 .languages-wrap {
     flex: 1; /* 자동 크기 조정, 한 줄에 맞춤 */
@@ -265,6 +269,7 @@ label {
     box-shadow: 0 0 .5rem 0 rgba(68, 68, 68, .4);
     border-radius: 1rem;
     cursor: pointer;
+    color: #000;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .projects-wrap-ul:hover,
@@ -337,16 +342,25 @@ label {
 
 /* 직장 캐리어 CSS */
 #career {
-    background-color:#222222;
+    background-color:#8C1D40;
 }
 .career-h3 {
     color:white;
 }
 
+/* 개인 공부 CSS */
+#personal-study {
+    background-color:#8C1D40;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+.personal-study-h3 {
+    color:white;
+}
+
 /* footer CSS */
 #footer {
-    border-top :1px solid gray;
-    background-color:#222222;
+    border-top :1px solid #eee;
+    background-color:#fff;
 }
 .footer {
     width: 100%;
@@ -370,13 +384,14 @@ label {
     word-break: break-all; /* 긴 주소는 줄바꿈 */
     background-color:white;
     text-decoration:none;
-    color:black;
+    color:#8C1D40;
     font-weight:600;
     font-size:16px;
     width: 220px; /* 모든 카드 동일한 width */
     height: 220px; /* 모든 카드 동일한 height */
     padding: 20px;
     border-radius:15px;
+    box-shadow: 0 0 .5rem 0 rgba(68, 68, 68, .25);
     transition: transform 0.3s ease-in-out;
 }
 .footer-wrap a:hover {
@@ -386,7 +401,7 @@ label {
     width: 100%;
 }
 .footer-wrap-a {
-    color:#258ddb;
+    color:#8C1D40;
     position: relative;
     display: inline-block;
     font-size: 18px;
@@ -403,13 +418,13 @@ label {
     bottom: -2px;
     width: 0;
     height: 2px;
-    border-bottom:1px solid #258ddb;
+    border-bottom:1px solid #8C1D40;
     transition: color 0.1s ease-in-out;
 }
 
 .footer-copyright {
     padding-top:20px;
-    color:white;
+    color:#8C1D40;
     font-size:20px;
     font-weight:700;
 }
@@ -436,6 +451,7 @@ label {
     z-index: 100;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     background-color: hsla(0, 0%, 0%, .55);
     padding: 6rem 1.5rem 1.5rem;
     overflow-y: auto;
@@ -495,7 +511,7 @@ label {
     height: 7rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #FAC917;
+    border: 3px solid #8C1D40;
 }
 .intro-popup-photo img {
     width: 100%;
@@ -524,13 +540,36 @@ label {
     font-weight: 700;
     color: #6c757d;
 }
+.intro-popup-summary-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 1.25rem 0 .6rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: .9375rem;
+    font-weight: 800;
+    color: #8C1D40;
+}
+.intro-popup-summary-title::before {
+    content: "";
+    width: .35rem;
+    height: .35rem;
+    border-radius: 50%;
+    background-color: #8C1D40;
+    flex-shrink: 0;
+}
+.intro-popup-summary {
+    margin: 0;
+    font-size: .8125rem;
+    line-height: 1.55;
+    color: #555;
+}
 .intro-popup-checkbox {
     display: flex;
     align-items: center;
     gap: .5rem;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    margin-top: .75rem;
     font-size: .875rem;
     color: #555;
     cursor: pointer;
@@ -610,7 +649,7 @@ label {
 }
 
 #showMoreBtn {
-    background-color: #6DB33F;
+    background-color: #8C1D40;
     color: white;
     padding: 12px 28px;
     border: none;
@@ -625,9 +664,169 @@ label {
 }
 
 #showMoreBtn:hover {
-    background-color: #5a9b2d;
+    background-color: #6b1530;
     transform: scale(1.05);
     box-shadow: 0 .5rem .75rem rgba(0, 0, 0, .2);
+}
+
+/* 프로젝트 상세 팝업 CSS */
+.project-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: hsla(0, 0%, 0%, .6);
+    padding: 4.5rem 1.5rem 1.5rem;
+    overflow-y: auto;
+}
+.project-popup {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    background-color: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .35);
+    padding: 2rem;
+    animation: introPopupBounce .5s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+.project-popup-close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out;
+}
+.project-popup-close:hover {
+    background-color: #e2e2e2;
+}
+.project-popup-title {
+    margin: 0 1.5rem .75rem 0;
+    font-size: 1.15rem;
+    color: #8C1D40;
+}
+.project-popup-slide-area {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+.project-popup-nav {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #f5eef1;
+    color: #8C1D40;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out;
+}
+.project-popup-nav:hover {
+    background-color: #f0dee5;
+}
+.project-popup-slide {
+    flex: 1;
+    min-height: 18rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-popup-image {
+    width: 100%;
+    border-radius: .75rem;
+    object-fit: cover;
+}
+.project-popup-info {
+    width: 100%;
+}
+.project-popup-heading {
+    margin: 0 0 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #8C1D40;
+    color: #8C1D40;
+    font-size: 1rem;
+}
+.project-popup-quote {
+    margin: 0 0 1rem;
+    padding: .75rem 1rem;
+    border-left: 3px solid #8C1D40;
+    background-color: #f9f1f4;
+    color: #6b1530;
+    font-size: .875rem;
+    font-style: italic;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+.project-popup-rows {
+    margin: 0;
+}
+.project-popup-row {
+    display: flex;
+    gap: 1rem;
+    padding: .4rem 0;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: .875rem;
+}
+.project-popup-row dt {
+    flex-shrink: 0;
+    width: 6rem;
+    font-weight: 700;
+    color: #6c757d;
+}
+.project-popup-row dd {
+    margin: 0;
+    word-break: keep-all;
+}
+.project-popup-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: .875rem;
+    line-height: 1.7;
+    word-break: keep-all;
+}
+.project-popup-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: .65rem 1.5rem;
+    border-radius: 2rem;
+    background-color: #8C1D40;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color .15s ease-in-out, transform .15s ease-in-out;
+}
+.project-popup-cta:hover {
+    background-color: #6b1530;
+    transform: scale(1.03);
+}
+.project-popup-dots {
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+    margin-top: 1.25rem;
+}
+.project-popup-dot {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: #e5c2cf;
+}
+.project-popup-dot.active {
+    background-color: #8C1D40;
 }
 
 /* 반응형 CSS */

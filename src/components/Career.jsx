@@ -1,4 +1,5 @@
 import bitechLogo from '../assets/career/betech.png'
+import clipboardIcon from '../assets/icon/clipboard.png'
 
 const careers = [
   {
@@ -15,7 +16,7 @@ export default function Career() {
       <div className="section-wrap">
         <div className="intro-s1">
           <p className="h3-img">
-            <img src="https://github.com/user-attachments/assets/07616636-2742-4f71-b3a3-fe44736a1195" alt="" width="40px" />
+            <img src={clipboardIcon} alt="" width="40px" />
           </p>
           <h3 className="intro-h3 career-h3">캐리어</h3>
         </div>

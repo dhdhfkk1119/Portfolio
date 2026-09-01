@@ -5,6 +5,7 @@ import Intro from './components/Intro.jsx'
 import Languages from './components/Languages.jsx'
 import Projects from './components/Projects.jsx'
 import Career from './components/Career.jsx'
+import PersonalStudy from './components/PersonalStudy.jsx'
 import Footer from './components/Footer.jsx'
 import TopButton from './components/TopButton.jsx'
 import IntroPopup from './components/IntroPopup.jsx'
@@ -26,6 +27,7 @@ export default function App() {
       <Languages />
       <Projects />
       <Career />
+      <PersonalStudy />
       <Footer />
       <TopButton />
       <IntroRecallButton onClick={() => setIntroOpen(true)} />
