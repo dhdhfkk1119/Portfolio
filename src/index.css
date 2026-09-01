@@ -422,6 +422,31 @@ label {
     transition: color 0.1s ease-in-out;
 }
 
+.footer-contact {
+    text-align: center;
+    padding-bottom: 24px;
+}
+.footer-contact-text {
+    margin: 0 0 1rem;
+    color: #555;
+    font-size: .9375rem;
+}
+.footer-contact-btn {
+    display: inline-block;
+    padding: .75rem 1.75rem;
+    border-radius: 2rem;
+    background-color: #8C1D40;
+    color: #fff;
+    font-size: .9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .15);
+    transition: background-color .15s ease-in-out, transform .15s ease-in-out;
+}
+.footer-contact-btn:hover {
+    background-color: #6b1530;
+    transform: scale(1.03);
+}
 .footer-copyright {
     padding-top:20px;
     color:#8C1D40;
