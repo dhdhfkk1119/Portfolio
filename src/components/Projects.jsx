@@ -15,7 +15,7 @@ const badge = (label, color, logo, logoColor = 'white') =>
 const projects = [
   {
     title: '셀리에(Sellier)',
-    period: '',
+    period: '비테크 회사 개발',
     heading: '중고 명품의 매입·감정·판매 전 과정을 통합 운영하는 프리미엄 리세일 플랫폼',
     bullets: [
       '실시간 시세 그래프와 실거래가 기반 가격 정보 제공',
@@ -26,7 +26,14 @@ const projects = [
       '프리미엄 발렉스 배송, 안전 배송, 부티크 픽업 지원',
     ],
     links: [],
-    skills: [],
+    skills: [
+      badge('Java', '007396', 'java'),
+      badge('SpringBoot', '6DB33F', 'springboot'),
+      badge('MySQL', '4479A1', 'mysql'),
+      badge('React', '20232A', 'react', '61DAFB'),
+      badge('Next.js', '000000', 'nextdotjs'),
+    ],
+    companyMade: true,
     hidden: false,
     detail: {
       slides: [
@@ -50,7 +57,11 @@ const projects = [
       '커뮤니티 게시물 신고 시 단계별 정지 처리',
       '어드민 페이지에서 상담사 승인·신고 검수·통계 대시보드 관리',
     ],
-    links: [],
+    links: [
+      { label: '전체 코드 파일 소개 FrontEnd', text: '[Front Flutter]', href: 'https://github.com/dhdhfkk1119/take_breath_front.git' },
+      { label: '전체 코드 파일 소개 BackServer', text: '[Back SpringBoot]', href: 'https://github.com/dhdhfkk1119/take_breath_server.git' },
+    ],
+    moreInfoHref: 'https://github.com/dhdhfkk1119/take_breath_front.git',
     skills: [
       badge('SpringBoot', '6DB33F', 'springboot'),
       badge('Flutter', '02569B', 'flutter'),
@@ -138,6 +149,7 @@ const projects = [
       badge('Java', '007396', 'java'),
     ],
     hidden: false,
+    moreInfoHref: 'https://github.com/dhdhfkk1119/markit_place_front',
     detail: {
       slides: [
         { type: 'image', src: markitCover },
@@ -183,10 +195,6 @@ const projects = [
             'server 레포 클론 후 IDE(IntelliJ, VSCode, Eclipse 등)에서 실행',
             '서버 구동 상태에서 Flutter 앱 실행',
           ],
-          cta: {
-            label: '더 자세한 내용 보러가기',
-            href: 'https://github.com/dhdhfkk1119/markit_place_front',
-          },
         },
       ],
     },

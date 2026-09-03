@@ -16,6 +16,7 @@ export default function ProjectDetailPopup({ project, slideIndex, onClose, onPre
 
   const slides = project.detail.slides
   const slide = slides[slideIndex]
+  const isLastSlide = slideIndex === slides.length - 1
 
   return (
     <div className="project-popup-overlay" onClick={onClose}>
@@ -55,17 +56,6 @@ export default function ProjectDetailPopup({ project, slideIndex, onClose, onPre
                     ))}
                   </ul>
                 )}
-                {slide.cta && (
-                  <a
-                    className="project-popup-cta"
-                    href={slide.cta.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {slide.cta.label}
-                  </a>
-                )}
               </div>
             )}
           </div>
@@ -74,6 +64,32 @@ export default function ProjectDetailPopup({ project, slideIndex, onClose, onPre
             <button className="project-popup-nav next" onClick={onNext} aria-label="다음">›</button>
           )}
         </div>
+
+        {isLastSlide && (
+          <div className="project-popup-more">
+            {project.companyMade ? (
+              <>
+                <button className="project-popup-cta disabled" disabled>더 자세한 내용 보러가기</button>
+                <p className="project-popup-more-note">*기업에서 제공하지 않습니다</p>
+              </>
+            ) : project.moreInfoHref ? (
+              <a
+                className="project-popup-cta"
+                href={project.moreInfoHref}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                더 자세한 내용 보러가기
+              </a>
+            ) : (
+              <>
+                <button className="project-popup-cta disabled" disabled>더 자세한 내용 보러가기</button>
+                <p className="project-popup-more-note">*준비중입니다</p>
+              </>
+            )}
+          </div>
+        )}
 
         {slides.length > 1 && (
           <div className="project-popup-dots">
